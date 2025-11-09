@@ -48,7 +48,7 @@ const About = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              About <span className="text-primary">Vivian Chemicals</span>
+              About <span className="text-primary">Vivan Chemicals</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Building Excellence in Chemical Manufacturing Since Over a Decade
@@ -71,7 +71,7 @@ const About = () => {
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   Founded with a vision to revolutionize the specialty chemicals industry,
-                  Vivian Chemicals has grown to become a trusted name in colloidal silica
+                  Vivan Chemicals has grown to become a trusted name in colloidal silica
                   manufacturing. Our journey began with a simple yet powerful commitment: to
                   deliver uncompromising quality that our customers can rely on.
                 </p>
@@ -185,7 +185,7 @@ const About = () => {
               Ready to Partner with Us?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join hundreds of satisfied customers who trust Vivian Chemicals for their
+              Join hundreds of satisfied customers who trust Vivan Chemicals for their
               colloidal silica needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

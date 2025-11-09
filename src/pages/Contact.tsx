@@ -1,12 +1,12 @@
-import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
-import SEO from "@/components/SEO";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -209,7 +209,7 @@ const Contact = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Vivian Chemicals Location"
+                  title="Vivan Chemicals Location"
                 />
               </div>
             </motion.div>
