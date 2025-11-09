@@ -1,8 +1,8 @@
+import beakerImage from "@/assets/beaker-real.png";
+import chemicalCompound from "@/assets/chemical-compound-real.png";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-import chemicalCompound from "@/assets/chemical-compound-real.png";
-import beakerImage from "@/assets/beaker-real.png";
-import SEO from "@/components/SEO";
 
 const Product = () => {
   const applications = [
@@ -409,17 +409,6 @@ const Product = () => {
                 </p>
               </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer Credit */}
-      <section className="py-8 border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-sm text-muted-foreground">
-              © 2025 Vivan Chemicals. All Rights Reserved.
-            </p>
           </div>
         </div>
       </section>

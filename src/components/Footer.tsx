@@ -1,5 +1,6 @@
+import { Facebook, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import vivanLogo from "../assets/vivan-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,8 +12,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">V</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-card">
+                <img
+                  src={vivanLogo}
+                  alt="Vivan Chemicals Logo"
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
               <span className="text-lg font-bold text-foreground">
                 Vivan Chemicals
