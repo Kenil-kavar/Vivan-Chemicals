@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Package, CheckCircle } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const FreeSample = () => {
   const { toast } = useToast();
@@ -46,7 +47,13 @@ const FreeSample = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SEO
+        title="Request Free Sample"
+        description="Request a free sample of Vivan Chemicals' premium HCS-30 colloidal silica. Test our high-quality product for your specific application before ordering. Fast delivery and expert support."
+        keywords="free colloidal silica sample, HCS-30 sample request, test silica solution, colloidal silica trial"
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-secondary/30 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -198,6 +205,7 @@ const FreeSample = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

@@ -1,6 +1,5 @@
-import { Facebook, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
-import logoImage from "../assets/02.png";
+import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,11 +11,9 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img
-                src={logoImage}
-                alt="Vivan Chemicals logo"
-                className="h-12 w-auto rounded-lg object-contain"
-              />
+              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-xl">V</span>
+              </div>
               <span className="text-lg font-bold text-foreground">
                 Vivan Chemicals
               </span>
@@ -61,7 +58,7 @@ const Footer = () => {
                 <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <div>+91 7990671720 (Jeet)</div>
-                  <div>+91 9979711111 ( Sagar Adroja )</div>
+                  <div>+91 9979711111 (Sagar)</div>
                 </div>
               </li>
               <li className="flex items-start space-x-2 text-sm text-muted-foreground">
@@ -106,7 +103,7 @@ const Footer = () => {
             © {currentYear} Vivan Chemicals. All Rights Reserved.
           </p>
           <p className="text-sm text-muted-foreground">
-            <span className="font-medium text-foreground">Design & Created by Kenil Kavar</span>, <span className="font-medium text-foreground">Contact no : +91 9313713899</span>
+            Design & Created by <span className="font-medium text-foreground">Kenil Kavar</span>, Contact no - +91 9313713899
           </p>
         </div>
       </div>

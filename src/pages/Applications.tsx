@@ -8,6 +8,7 @@ import dailyCosmetics from "@/assets/daily-cosmetics-real.png";
 import foodIndustry from "@/assets/food-industry-real.png";
 import grindingPolishing from "@/assets/grinding-polishing-real.jpg";
 import coating from "@/assets/coating-real.jpeg";
+import SEO from "@/components/SEO";
 
 interface Application {
   title: string;
@@ -144,7 +145,13 @@ const Applications = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SEO
+        title="Industry Applications"
+        description="Discover diverse applications of Vivan Chemicals' colloidal silica in investment casting, paper industry, cosmetics, food processing, grinding & polishing, and coating industries. Expert solutions for every sector."
+        keywords="colloidal silica applications, investment casting binder, paper coating silica, cosmetic grade silica, food processing chemicals, grinding polishing agent, coating additives"
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-secondary/30 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -175,6 +182,7 @@ const Applications = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

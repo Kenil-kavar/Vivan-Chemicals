@@ -1,7 +1,8 @@
-import beakerImage from "@/assets/beaker-real.png";
-import chemicalCompound from "@/assets/chemical-compound-real.png";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import chemicalCompound from "@/assets/chemical-compound-real.png";
+import beakerImage from "@/assets/beaker-real.png";
+import SEO from "@/components/SEO";
 
 const Product = () => {
   const applications = [
@@ -65,7 +66,13 @@ const Product = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SEO
+        title="Product - HCS-30 Colloidal Silica"
+        description="High-quality HCS-30 Colloidal Silica for investment casting, paper industry, cosmetics, food processing, and semiconductor applications. Technical specifications, COA report, and safety data available."
+        keywords="HCS-30, colloidal silica product, silica sol specifications, investment casting binder, paper coating, semiconductor polishing, food grade silica"
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-secondary/30 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -405,7 +412,19 @@ const Product = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer Credit */}
+      <section className="py-8 border-t border-border">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-sm text-muted-foreground">
+              © 2025 Vivan Chemicals. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
+    </>
   );
 };
 

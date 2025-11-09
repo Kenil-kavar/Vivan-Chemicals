@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -60,7 +61,13 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Vivan Chemicals for colloidal silica inquiries, quotes, and support. Contact our team via phone, email, or visit our office. Business hours: Monday-Saturday 9 AM - 6 PM."
+        keywords="contact Vivan Chemicals, colloidal silica inquiry, chemical supplier contact, silica solution support"
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-secondary/30 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -202,7 +209,7 @@ const Contact = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Vivan Chemicals Location"
+                  title="Vivian Chemicals Location"
                 />
               </div>
             </motion.div>
@@ -210,6 +217,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

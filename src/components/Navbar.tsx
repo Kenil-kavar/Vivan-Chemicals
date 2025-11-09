@@ -1,10 +1,10 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Moon, Sun, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logoImage from "../assets/02.png";
+import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { Button } from "./ui/button";
+import { motion, AnimatePresence } from "framer-motion";
+import vivanLogo from "@/assets/vivan-logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,12 +40,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <img
-              src={logoImage}
-              alt="Vivan Chemicals logo"
-              className="h-12 w-auto rounded-lg object-contain"
-            />
+          <Link to="/" className="flex items-center space-x-3">
+            <img src={vivanLogo} alt="Vivan Chemicals Logo" className="h-12 w-auto" />
             <span className="text-xl font-bold text-foreground hidden sm:inline">
               Vivan Chemicals
             </span>

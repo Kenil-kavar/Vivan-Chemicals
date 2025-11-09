@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Award, Eye, Microscope, Target } from "lucide-react";
+import { Target, Eye, Microscope, Award } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const About = () => {
   const values = [
@@ -30,7 +31,13 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SEO
+        title="About Us"
+        description="Learn about Vivan Chemicals - a leading manufacturer of premium colloidal silica solutions with 10+ years of excellence serving 100+ companies worldwide. Our mission, vision, and commitment to quality."
+        keywords="colloidal silica manufacturer, specialty chemicals company, silica solutions India, chemical manufacturing excellence"
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-secondary/30 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +48,7 @@ const About = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              About <span className="text-primary">Vivan Chemicals</span>
+              About <span className="text-primary">Vivian Chemicals</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Building Excellence in Chemical Manufacturing Since Over a Decade
@@ -64,7 +71,7 @@ const About = () => {
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   Founded with a vision to revolutionize the specialty chemicals industry,
-                  Vivan Chemicals has grown to become a trusted name in colloidal silica
+                  Vivian Chemicals has grown to become a trusted name in colloidal silica
                   manufacturing. Our journey began with a simple yet powerful commitment: to
                   deliver uncompromising quality that our customers can rely on.
                 </p>
@@ -178,7 +185,7 @@ const About = () => {
               Ready to Partner with Us?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join hundreds of satisfied customers who trust Vivan Chemicals for their
+              Join hundreds of satisfied customers who trust Vivian Chemicals for their
               colloidal silica needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -199,6 +206,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

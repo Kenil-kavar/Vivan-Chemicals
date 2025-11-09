@@ -4,6 +4,7 @@ import { ArrowRight, Users, Calendar, Droplets } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import factoryBanner from "@/assets/factory-banner.jpg";
+import SEO from "@/components/SEO";
 
 const AnimatedCounter = ({ end, duration = 2 }: { end: number; duration?: number }) => {
   const [count, setCount] = useState(0);
@@ -50,17 +51,23 @@ const Home = () => {
     { icon: Droplets, value: 25000, suffix: "+", label: "Liters Daily Capacity" },
   ];
 
-  const companies = [
-    "Company 1",
-    "Company 2",
-    "Company 3",
-    "Company 4",
-    "Company 5",
+  const partners = [
+    "Partner Company 1",
+    "Partner Company 2",
+    "Partner Company 3",
+    "Partner Company 4",
+    "Partner Company 5",
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
+    <>
+      <SEO
+        title="Home"
+        description="Vivan Chemicals - Leading manufacturer of premium Colloidal Silica solutions for investment casting, paper industry, cosmetics, food processing, and semiconductor applications. Serving 100+ companies with 10+ years of excellence."
+        keywords="colloidal silica manufacturer, silica sol India, investment casting chemicals, industrial silica solutions, HCS-30 colloidal silica"
+      />
+      <div className="min-h-screen">
+        {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 z-0"
@@ -154,7 +161,7 @@ const Home = () => {
               Trusted by Leading Industries
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Conducting business with top companies across various sectors to deliver excellence
+              Partnering with top companies across various sectors to deliver excellence
             </p>
           </motion.div>
 
@@ -173,12 +180,12 @@ const Home = () => {
                 },
               }}
             >
-              {[...companies, ...companies].map((company, index) => (
+              {[...partners, ...partners].map((partner, index) => (
                 <div
                   key={index}
                   className="flex-shrink-0 w-48 h-24 bg-card rounded-xl border border-border flex items-center justify-center"
                 >
-                  <span className="text-muted-foreground font-medium">{company}</span>
+                  <span className="text-muted-foreground font-medium">{partner}</span>
                 </div>
               ))}
             </motion.div>
@@ -211,7 +218,8 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
