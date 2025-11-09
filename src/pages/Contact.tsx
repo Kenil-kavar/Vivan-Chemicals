@@ -53,7 +53,7 @@ const Contact = () => {
         "Gujarat, India",
       ],
     },
-    {
+    { 
       icon: Clock,
       title: "Business Hours",
       details: ["Monday - Saturday: 9:00 AM - 6:00 PM", "Sunday: Closed"],
