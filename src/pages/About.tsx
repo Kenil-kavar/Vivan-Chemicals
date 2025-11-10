@@ -1,6 +1,8 @@
-import { motion } from "framer-motion";
-import { Target, Eye, Microscope, Award } from "lucide-react";
 import SEO from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Award, Eye, Microscope, Target } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const values = [
@@ -189,18 +191,12 @@ const About = () => {
               colloidal silica needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
-              >
-                Contact Us Today
-              </a>
-              <a
-                href="/free-sample"
-                className="inline-flex items-center justify-center px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/80 transition-colors"
-              >
-                Request Free Sample
-              </a>
+              <Button asChild className="px-6 py-3 rounded-lg">
+                <Link to="/contact">Contact Us Today</Link>
+              </Button>
+              <Button asChild variant="secondary" className="px-6 py-3 rounded-lg">
+                <Link to="/free-sample">Request Free Sample</Link>
+              </Button>
             </div>
           </motion.div>
         </div>

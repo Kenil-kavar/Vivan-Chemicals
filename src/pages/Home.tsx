@@ -109,7 +109,7 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              <Link to="/product">
+              <Link href="/product">
                 <Button size="lg" className="group">
                   Explore Our Products
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
