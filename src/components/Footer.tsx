@@ -14,11 +14,11 @@ const Footer = () => {
             <div className="flex items-center space-x-3">
               <img 
                 src={vivanLogo} 
-                alt="Vivan Chemicals Logo" 
+                alt="Vivan Chemical Logo" 
                 className="h-10 w-auto"
               />
               <span className="text-lg font-bold text-foreground">
-                Vivan Chemicals
+                Vivan Chemical
               </span>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -103,7 +103,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center space-y-2">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Vivan Chemicals. All Rights Reserved.
+            © {currentYear} Vivan Chemical. All Rights Reserved.
           </p>
           <p className="text-sm text-muted-foreground">
             Design & Created by <span className="font-medium text-foreground">Kenil Kavar</span>, Contact no - +91 9313713899

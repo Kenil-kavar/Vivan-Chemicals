@@ -48,7 +48,7 @@ app = FastAPI(lifespan=lifespan)
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to Vivan Chemicals API"}
+    return {"message": "Welcome to Vivan Chemical API"}
 
 @app.post("/api/contact-us")
 def contact_us(contact_us: ContactUsCreate, db: Session = Depends(get_db)):

@@ -1,6 +1,6 @@
-# Vivan Chemicals Backend
+# Vivan Chemical Backend
 
-This is the FastAPI backend for Vivan Chemicals, providing APIs for contact us and free sample requests.
+This is the FastAPI backend for Vivan Chemical, providing APIs for contact us and free sample requests.
 
 ## Setup
 1. Install dependencies: `pip install -r requirements.txt`

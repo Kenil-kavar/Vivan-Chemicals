@@ -1,4 +1,4 @@
-# SEO Setup Guide for Vivan Chemicals
+# SEO Setup Guide for Vivan Chemical
 
 ## ✅ What's Already Done
 

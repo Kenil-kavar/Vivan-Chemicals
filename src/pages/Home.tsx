@@ -1,10 +1,10 @@
-import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Users, Calendar, Droplets } from "lucide-react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import factoryBanner from "@/assets/factory-banner.jpg";
 import SEO from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { ArrowRight, Calendar, Droplets, Users } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AnimatedCounter = ({ end, duration = 2 }: { end: number; duration?: number }) => {
   const [count, setCount] = useState(0);
@@ -47,8 +47,8 @@ const AnimatedCounter = ({ end, duration = 2 }: { end: number; duration?: number
 const Home = () => {
   const stats = [
     { icon: Users, value: 100, suffix: "+", label: "Companies Served" },
-    { icon: Calendar, value: 10, suffix: "+", label: "Years of Excellence" },
-    { icon: Droplets, value: 25000, suffix: "+", label: "Liters Daily Capacity" },
+    { icon: Calendar, value: 6, suffix: "+", label: "Years of Excellence" },
+    { icon: Droplets, value: 20000, suffix: "+", label: "Kilogram Daily Capacity" },
   ];
 
   const partners = [
@@ -63,7 +63,7 @@ const Home = () => {
     <>
       <SEO
         title="Home"
-        description="Vivan Chemicals - Leading manufacturer of premium Colloidal Silica solutions for investment casting, paper industry, cosmetics, food processing, and semiconductor applications. Serving 100+ companies with 10+ years of excellence."
+        description="Vivan Chemical - Leading manufacturer of premium Colloidal Silica solutions for investment casting, paper industry, cosmetics, food processing, and semiconductor applications. Serving 100+ companies with 10+ years of excellence."
         keywords="colloidal silica manufacturer, silica sol India, investment casting chemicals, industrial silica solutions, VCS-30 colloidal silica"
       />
       <div className="min-h-screen">

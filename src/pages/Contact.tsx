@@ -70,8 +70,8 @@ const Contact = () => {
     <>
       <SEO
         title="Contact Us"
-        description="Get in touch with Vivan Chemicals for colloidal silica inquiries, quotes, and support. Contact our team via phone, email, or visit our office. Business hours: Monday-Saturday 9 AM - 6 PM."
-        keywords="contact Vivan Chemicals, colloidal silica inquiry, chemical supplier contact, silica solution support"
+        description="Get in touch with Vivan Chemical for colloidal silica inquiries, quotes, and support. Contact our team via phone, email, or visit our office. Business hours: Monday-Saturday 9 AM - 6 PM."
+        keywords="contact Vivan Chemical, colloidal silica inquiry, chemical supplier contact, silica solution support"
       />
       <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -259,7 +259,7 @@ const Contact = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Vivan Chemicals Location"
+                  title="Vivan Chemical Location"
                 />
               </div>
             </motion.div>

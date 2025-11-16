@@ -132,7 +132,7 @@ const Applications = () => {
     <>
       <SEO
         title="Industry Applications"
-        description="Discover diverse applications of Vivan Chemicals' colloidal silica in investment casting, paper industry, cosmetics, food processing, grinding & polishing, and coating industries. Expert solutions for every sector."
+        description="Discover diverse applications of Vivan Chemical' colloidal silica in investment casting, paper industry, cosmetics, food processing, grinding & polishing, and coating industries. Expert solutions for every sector."
         keywords="colloidal silica applications, investment casting binder, paper coating silica, cosmetic grade silica, food processing chemicals, grinding polishing agent, coating additives"
       />
       <div className="min-h-screen pt-20">

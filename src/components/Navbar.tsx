@@ -41,9 +41,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src={vivanLogo} alt="Vivan Chemicals Logo" className="h-12 w-auto" />
+            <img src={vivanLogo} alt="Vivan Chemical Logo" className="h-12 w-auto" />
             <span className="text-xl font-bold text-foreground hidden sm:inline">
-              Vivan Chemicals
+              Vivan Chemical
             </span>
           </Link>
 

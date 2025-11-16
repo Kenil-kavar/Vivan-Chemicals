@@ -17,7 +17,7 @@ const SEO = ({ title, description, keywords, image, type = "website" }: SEOProps
 
   useEffect(() => {
     // Update title
-    document.title = `${title} | Vivan Chemicals`;
+    document.title = `${title} | Vivan Chemical`;
 
     // Update or create meta tags
     const updateMetaTag = (name: string, content: string, isProperty = false) => {
@@ -40,16 +40,16 @@ const SEO = ({ title, description, keywords, image, type = "website" }: SEOProps
     }
 
     // Open Graph tags
-    updateMetaTag("og:title", `${title} | Vivan Chemicals`, true);
+    updateMetaTag("og:title", `${title} | Vivan Chemical`, true);
     updateMetaTag("og:description", description, true);
     updateMetaTag("og:url", fullUrl, true);
     updateMetaTag("og:type", type, true);
     updateMetaTag("og:image", image || defaultImage, true);
-    updateMetaTag("og:site_name", "Vivan Chemicals", true);
+    updateMetaTag("og:site_name", "Vivan Chemical", true);
 
     // Twitter Card tags
     updateMetaTag("twitter:card", "summary_large_image");
-    updateMetaTag("twitter:title", `${title} | Vivan Chemicals`);
+    updateMetaTag("twitter:title", `${title} | Vivan Chemical`);
     updateMetaTag("twitter:description", description);
     updateMetaTag("twitter:image", image || defaultImage);
 
