@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, MessageCircle, Phone, PhoneCall } from "lucide-react";
 import { useState } from "react";
 
 const Contact = () => {
@@ -36,12 +36,18 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone Numbers",
-      details: ["+91 7990671720 (Jeet)", "+91 9979711111 (Sagar Adroja)"],
+      contacts: [
+        { name: "Jeet", display: "+91 7990671720", number: "917990671720" },
+        { name: "Sagar Adroja", display: "+91 9979711111", number: "919979711111" },
+      ],
+      showPhoneButtons: true,
     },
     {
       icon: Mail,
       title: "Email Address",
       details: ["vivanchemical@gmail.com"],
+      showButtons: true,
+      email: "vivanchemical@gmail.com",
     },
     {
       icon: MapPin,
@@ -53,7 +59,7 @@ const Contact = () => {
         "Gujarat, India",
       ],
     },
-    { 
+    {
       icon: Clock,
       title: "Business Hours",
       details: ["Monday - Saturday: 9:00 AM - 6:00 PM", "Sunday: Closed"],
@@ -98,7 +104,7 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="bg-card p-6 rounded-2xl border border-border hover:shadow-lg transition-shadow"
+                className="bg-card p-6 rounded-2xl border border-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl mb-4">
                   <info.icon className="h-6 w-6 text-primary" />
@@ -106,13 +112,57 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold text-foreground mb-3">
                   {info.title}
                 </h3>
-                <div className="space-y-1">
-                  {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-sm text-muted-foreground">
-                      {detail}
-                    </p>
-                  ))}
-                </div>
+                {info.details && (
+                  <div className="space-y-1 mb-4">
+                    {info.details.map((detail, idx) => (
+                      <p key={idx} className="text-sm text-muted-foreground">
+                        {detail}
+                      </p>
+                    ))}
+                  </div>
+                )}
+                {info.showPhoneButtons && info.contacts && (
+                  <div className="space-y-3">
+                    {info.contacts.map((contact, idx) => (
+                      <div key={idx} className="space-y-2">
+                        <p className="text-sm font-medium text-foreground">
+                          {contact.display} ({contact.name})
+                        </p>
+                        <div className="flex gap-2">
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="flex-1"
+                            onClick={() => window.open(`tel:+${contact.number}`, '_self')}
+                          >
+                            <PhoneCall className="h-4 w-4 mr-1" />
+                            Call
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="flex-1"
+                            onClick={() => window.open(`https://wa.me/${contact.number}`, '_blank')}
+                          >
+                            <MessageCircle className="h-4 w-4 mr-1" />
+                            WhatsApp
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {info.showButtons && info.email && (
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="w-full"
+                    onClick={() => window.open(`mailto:${info.email}`, '_self')}
+                  >
+                    <Mail className="h-4 w-4 mr-2" />
+                    Email Us
+                  </Button>
+                )}
               </motion.div>
             ))}
           </div>
