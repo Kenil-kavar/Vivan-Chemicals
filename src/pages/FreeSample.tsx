@@ -50,8 +50,8 @@ const FreeSample = () => {
     <>
       <SEO
         title="Request Free Sample"
-        description="Request a free sample of Vivan Chemicals' premium HCS-30 colloidal silica. Test our high-quality product for your specific application before ordering. Fast delivery and expert support."
-        keywords="free colloidal silica sample, HCS-30 sample request, test silica solution, colloidal silica trial"
+        description="Request a free sample of Vivan Chemicals' premium VCS-30 colloidal silica. Test our high-quality product for your specific application before ordering. Fast delivery and expert support."
+        keywords="free colloidal silica sample, VCS-30 sample request, test silica solution, colloidal silica trial"
       />
       <div className="min-h-screen pt-20">
       {/* Hero Section */}

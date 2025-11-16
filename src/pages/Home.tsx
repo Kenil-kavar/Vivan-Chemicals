@@ -64,7 +64,7 @@ const Home = () => {
       <SEO
         title="Home"
         description="Vivan Chemicals - Leading manufacturer of premium Colloidal Silica solutions for investment casting, paper industry, cosmetics, food processing, and semiconductor applications. Serving 100+ companies with 10+ years of excellence."
-        keywords="colloidal silica manufacturer, silica sol India, investment casting chemicals, industrial silica solutions, HCS-30 colloidal silica"
+        keywords="colloidal silica manufacturer, silica sol India, investment casting chemicals, industrial silica solutions, VCS-30 colloidal silica"
       />
       <div className="min-h-screen">
         {/* Hero Section */}

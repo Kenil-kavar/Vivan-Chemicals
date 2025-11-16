@@ -1,14 +1,14 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import investmentCasting from "@/assets/investment-casting-real.jpg";
-import paperIndustry from "@/assets/paper-industry-real.jpg";
+import coating from "@/assets/coating-real.jpeg";
 import dailyCosmetics from "@/assets/daily-cosmetics-real.png";
 import foodIndustry from "@/assets/food-industry-real.png";
 import grindingPolishing from "@/assets/grinding-polishing-real.jpg";
-import coating from "@/assets/coating-real.jpeg";
+import investmentCasting from "@/assets/investment-casting-real.jpg";
+import paperIndustry from "@/assets/paper-industry-real.jpg";
 import SEO from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
 
 interface Application {
   title: string;
@@ -49,22 +49,6 @@ const ApplicationCard = ({ application }: { application: Application }) => {
         <p className="text-muted-foreground mb-4">
           {isExpanded ? application.fullDescription : application.description}
         </p>
-
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-foreground mb-2">
-            Recommended Products:
-          </h4>
-          <div className="flex flex-wrap gap-2">
-            {application.recommendedProducts.map((product, index) => (
-              <span
-                key={index}
-                className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-lg"
-              >
-                {product}
-              </span>
-            ))}
-          </div>
-        </div>
 
         <Button
           variant="ghost"

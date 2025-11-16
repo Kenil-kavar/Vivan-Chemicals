@@ -31,7 +31,7 @@ const Product = () => {
     { 
       parameter: "pH value", 
       specification: "9.0 ~ 10.5", 
-      value: "10.20" 
+      value: "9.9" 
     },
     { 
       parameter: "Viscosity (27°C) B4 Cup Seconds", 
@@ -46,7 +46,7 @@ const Product = () => {
     { 
       parameter: "Specific Area (m²/g)", 
       specification: "225–340", 
-      value: "258" 
+      value: "310" 
     },
     { 
       parameter: "Average Particle Size (nm)", 
@@ -68,9 +68,9 @@ const Product = () => {
   return (
     <>
       <SEO
-        title="Product - HCS-30 Colloidal Silica"
-        description="High-quality HCS-30 Colloidal Silica for investment casting, paper industry, cosmetics, food processing, and semiconductor applications. Technical specifications, COA report, and safety data available."
-        keywords="HCS-30, colloidal silica product, silica sol specifications, investment casting binder, paper coating, semiconductor polishing, food grade silica"
+        title="Product - VCS-30 Colloidal Silica"
+        description="High-quality VCS-30 Colloidal Silica for investment casting, paper industry, cosmetics, food processing, and semiconductor applications. Technical specifications, COA report, and safety data available."
+        keywords="VCS-30, colloidal silica product, silica sol specifications, investment casting binder, paper coating, semiconductor polishing, food grade silica"
       />
       <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -84,7 +84,7 @@ const Product = () => {
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Colloidal Silica Suspension{" "}
-              <span className="text-primary">(HCS-30)</span>
+              <span className="text-primary">(VCS-30)</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Nano Amorphous Silica Sol – A Premium Quality Chemical Solution
@@ -107,7 +107,7 @@ const Product = () => {
               Technical Data Sheet
             </h2>
             <p className="text-lg text-muted-foreground">
-              Colloidal Silica Suspension - HCS-30
+              Colloidal Silica Suspension - VCS-30
             </p>
           </motion.div>
 
@@ -172,7 +172,7 @@ const Product = () => {
             </h3>
             <div className="bg-card p-8 rounded-xl border border-border">
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Colloidal silicas are suspensions of fine amorphous, nonporous, and typically spherical and uneven shape silica particles in a liquid phase. Hansgold colloidal silica (HCS-30) is an alkaline, nanosized, aqueous dispersion of colloidal silica that is approximately 30% solids by weight. It is chemically known as Silicone dioxide (SiO₂). The silica dispersion is alkali metal stabilized and the amorphous silica particles carry a negative surface charge. The physical appearance of the dispersion is a translucent liquid, slightly more viscous than water.
+                Colloidal silicas are suspensions of fine amorphous, nonporous, and typically spherical and uneven shape silica particles in a liquid phase. Hansgold colloidal silica (VCS-30) is an alkaline, nanosized, aqueous dispersion of colloidal silica that is approximately 30% solids by weight. It is chemically known as Silicone dioxide (SiO₂). The silica dispersion is alkali metal stabilized and the amorphous silica particles carry a negative surface charge. The physical appearance of the dispersion is a translucent liquid, slightly more viscous than water.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 The surface of colloidal silica in contact with water is covered by siloxane bonds (Si–O–Si) and silanol groups (Si–OH). This makes colloidal silica very hydrophilic and capable of forming numerous hydrogen bonds.
@@ -342,7 +342,7 @@ const Product = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-              Certificate of Analysis (CoA) Report of HCS-30
+              Certificate of Analysis (CoA) Report of VCS-30
             </h2>
             <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-lg">
               <div className="overflow-x-auto">
@@ -401,7 +401,7 @@ const Product = () => {
               className="order-1 lg:order-2"
             >
               <h2 className="text-3xl font-bold text-foreground mb-6">
-                Light Transmission Test of HCS-30
+                Light Transmission Test of VCS-30
               </h2>
               <div className="bg-card p-6 rounded-xl border border-border">
                 <p className="text-muted-foreground leading-relaxed">

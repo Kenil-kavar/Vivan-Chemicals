@@ -69,7 +69,7 @@ Use these tools:
 - **Google Analytics** - Track visitor behavior
 - Check search rankings for keywords like:
   - "colloidal silica manufacturer India"
-  - "HCS-30 colloidal silica"
+  - "VCS-30 colloidal silica"
   - "investment casting chemicals"
   - "silica sol supplier"
 
