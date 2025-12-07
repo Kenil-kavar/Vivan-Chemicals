@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vivan-chemicals.com/sitemap.xml

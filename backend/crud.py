@@ -9,15 +9,14 @@ from models import ContactUs, FreeSample
 log = logging.getLogger("uvicorn")
 
 # Database URL
-DEFAULT_DATABASE_URL = (
-    "postgresql://neondb_owner:npg_nEUZoKe5rB6u@"
-    "ep-long-mud-a4z6o3j7-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=prefer"
-)
+DEFAULT_DATABASE_URL = "sqlite:///./vivan.db"
 
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", DEFAULT_DATABASE_URL)
 
 try:
-    engine = create_engine(SQLALCHEMY_DATABASE_URL)
+    engine = create_engine(
+        SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+    )
     SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
     log.info("Database connection established successfully")
 except Exception as e:

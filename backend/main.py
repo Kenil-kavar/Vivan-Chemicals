@@ -1,4 +1,5 @@
 import logging
+import os
 from contextlib import asynccontextmanager
 
 from alembic import command
@@ -44,7 +45,80 @@ async def lifespan(app_: FastAPI):
     yield
     log.info("Shutting down...")
 
-app = FastAPI(lifespan=lifespan)
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI(
+    title="Vivan Chemical API",
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json",
+    lifespan=lifespan
+)
+
+from sqladmin import Admin, ModelView
+from sqladmin.authentication import AuthenticationBackend
+from starlette.requests import Request
+from models import ContactUs, FreeSample
+
+class AdminAuth(AuthenticationBackend):
+    async def login(self, request: Request) -> bool:
+        form = await request.form()
+        username = form.get("username")
+        password = form.get("password")
+
+        # Validate username/password - Using env vars for production security
+        admin_user = os.getenv("ADMIN_USERNAME", "Jeet")
+        admin_pass = os.getenv("ADMIN_PASSWORD", "Jeet@123")
+        
+        if username == admin_user and password == admin_pass:
+            request.session.update({"token": "admin_token"})
+            return True
+        return False
+
+    async def logout(self, request: Request) -> bool:
+        request.session.clear()
+        return True
+
+    async def authenticate(self, request: Request) -> bool:
+        token = request.session.get("token")
+        if not token:
+            return False
+        return True
+
+# Use a secure secret key from env or generate one
+authentication_backend = AdminAuth(secret_key=os.getenv("SECRET_KEY", "change_this_to_a_secure_random_string_in_production"))
+admin = Admin(app, db_engine, authentication_backend=authentication_backend, base_url="/private/admin")
+
+class ContactUsAdmin(ModelView, model=ContactUs):
+    column_list = [ContactUs.id, ContactUs.name, ContactUs.email, ContactUs.phone, ContactUs.message, ContactUs.created_at]
+
+class FreeSampleAdmin(ModelView, model=FreeSample):
+    column_list = [FreeSample.id, FreeSample.name, FreeSample.email, FreeSample.phone, FreeSample.address, FreeSample.description, FreeSample.created_at]
+
+admin.add_view(ContactUsAdmin)
+admin.add_view(FreeSampleAdmin)
+
+# Configure CORS
+origins = [
+    "http://localhost:8080",
+    "http://localhost:5173",
+    "https://vivan-chemicals.com",
+    "https://www.vivan-chemicals.com",
+    "*" # Allow all for now to debug, user can restrict later
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Add ProxyHeadersMiddleware to trust Nginx headers (X-Forwarded-Proto, etc.)
+# This is CRITICAL for /docs and /private/admin to work correctly behind HTTPS/Nginx
+from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware
+app.add_middleware(ProxyHeadersMiddleware, trusted_hosts="*")
 
 @app.get("/")
 def read_root():

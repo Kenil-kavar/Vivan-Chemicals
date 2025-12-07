@@ -27,7 +27,7 @@ target_metadata = Base.metadata
 
 
 def get_url():
-    return "postgresql://neondb_owner:npg_nEUZoKe5rB6u@ep-long-mud-a4z6o3j7-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+    return os.getenv("DATABASE_URL", "sqlite:///./vivan.db")
 
 
 def run_migrations_offline() -> None:

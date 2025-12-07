@@ -1,69 +1,54 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title: string;
   description: string;
   keywords?: string;
+  canonical?: string;
   image?: string;
   type?: string;
 }
 
-const SEO = ({ title, description, keywords, image, type = "website" }: SEOProps) => {
-  const location = useLocation();
-  const siteUrl = window.location.origin;
-  const fullUrl = `${siteUrl}${location.pathname}`;
-  const defaultImage = `${siteUrl}/og-image.png`;
+export const SEO = ({
+  title,
+  description,
+  keywords = "Vivan Chemical, Colloidal Silica Manufacturer, Colloidal Silica India, Colloidal Silica Gujarat, Colloidal Silica Morbi, investment casting chemicals, silica sol, semiconductor polishing, food grade silica",
+  canonical = "https://vivan-chemicals.com",
+  image = "/og-image.png",
+  type = "website"
+}: SEOProps) => {
+  const siteTitle = "Vivan Chemical - Premium Colloidal Silica Manufacturer";
+  const fullTitle = title === siteTitle ? title : `${title} | Vivan Chemical`;
 
-  useEffect(() => {
-    // Update title
-    document.title = `${title} | Vivan Chemical`;
+  return (
+    <Helmet>
+      {/* Standard metadata */}
+      <title>{fullTitle}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      <link rel="canonical" href={canonical} />
 
-    // Update or create meta tags
-    const updateMetaTag = (name: string, content: string, isProperty = false) => {
-      const attribute = isProperty ? "property" : "name";
-      let element = document.querySelector(`meta[${attribute}="${name}"]`);
-      
-      if (!element) {
-        element = document.createElement("meta");
-        element.setAttribute(attribute, name);
-        document.head.appendChild(element);
-      }
-      
-      element.setAttribute("content", content);
-    };
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content={type} />
+      <meta property="og:title" content={fullTitle} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:site_name" content="Vivan Chemical" />
 
-    // Standard meta tags
-    updateMetaTag("description", description);
-    if (keywords) {
-      updateMetaTag("keywords", keywords);
-    }
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
 
-    // Open Graph tags
-    updateMetaTag("og:title", `${title} | Vivan Chemical`, true);
-    updateMetaTag("og:description", description, true);
-    updateMetaTag("og:url", fullUrl, true);
-    updateMetaTag("og:type", type, true);
-    updateMetaTag("og:image", image || defaultImage, true);
-    updateMetaTag("og:site_name", "Vivan Chemical", true);
-
-    // Twitter Card tags
-    updateMetaTag("twitter:card", "summary_large_image");
-    updateMetaTag("twitter:title", `${title} | Vivan Chemical`);
-    updateMetaTag("twitter:description", description);
-    updateMetaTag("twitter:image", image || defaultImage);
-
-    // Canonical URL
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-    canonical.href = fullUrl;
-  }, [title, description, keywords, image, type, fullUrl, defaultImage]);
-
-  return null;
+      {/* Geo Tags for Local SEO (Morbi, Gujarat, India) */}
+      <meta name="geo.region" content="IN-GJ" />
+      <meta name="geo.placename" content="Morbi" />
+      <meta name="geo.position" content="22.812;70.8236" />
+      <meta name="ICBM" content="22.812, 70.8236" />
+    </Helmet>
+  );
 };
 
 export default SEO;

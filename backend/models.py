@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
-from datetime import datetime
+from sqlalchemy.sql import func
 
 Base = declarative_base()
 
@@ -11,7 +11,7 @@ class ContactUs(Base):
     email = Column(String, nullable=False)
     phone = Column(String, nullable=True)
     message = Column(String, nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
 
 class FreeSample(Base):
     __tablename__ = "free_sample"
@@ -20,5 +20,5 @@ class FreeSample(Base):
     email = Column(String, nullable=False)
     phone = Column(String, nullable=True)
     address = Column(String, nullable=False)
-    product = Column(String, nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    description = Column(String, nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())

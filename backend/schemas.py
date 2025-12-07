@@ -15,4 +15,4 @@ class FreeSampleCreate(BaseModel):
     email: str
     phone: Optional[str] = None
     address: str
-    product: str
+    description: str
