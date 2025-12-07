@@ -55,8 +55,14 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
     openapi_url="/openapi.json",
-    lifespan=lifespan
+    lifespan=lifespan,
+    root_path=root_path
 )
+
+# Add ProxyHeadersMiddleware to trust Nginx headers (X-Forwarded-Proto, etc.)
+# This is CRITICAL for /docs and /private/admin to work correctly behind HTTPS/Nginx
+from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware
+app.add_middleware(ProxyHeadersMiddleware, trusted_hosts="*")
 
 from sqladmin import Admin, ModelView
 from sqladmin.authentication import AuthenticationBackend
@@ -117,11 +123,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# Add ProxyHeadersMiddleware to trust Nginx headers (X-Forwarded-Proto, etc.)
-# This is CRITICAL for /docs and /private/admin to work correctly behind HTTPS/Nginx
-from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware
-app.add_middleware(ProxyHeadersMiddleware, trusted_hosts="*")
 
 @app.get("/")
 def read_root():
