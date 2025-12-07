@@ -47,17 +47,13 @@ async def lifespan(app_: FastAPI):
 
 from fastapi.middleware.cors import CORSMiddleware
 
-root_path = os.getenv("ROOT_PATH", "")
-log.info(f"STARTING APP WITH ROOT_PATH: '{root_path}'")
-
 app = FastAPI(
     title="Vivan Chemical API",
     docs_url="/docs",
     redoc_url="/redoc",
     openapi_url="/openapi.json",
     lifespan=lifespan,
-    root_path=root_path,
-    servers=[{"url": "/backend"}]
+    root_path=os.getenv("ROOT_PATH", "")
 )
 
 from sqladmin import Admin, ModelView
