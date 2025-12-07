@@ -55,9 +55,7 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
     openapi_url="/openapi.json",
-    lifespan=lifespan,
-    root_path=root_path,
-    servers=[{"url": "/backend"}]
+    lifespan=lifespan
 )
 
 from sqladmin import Admin, ModelView
